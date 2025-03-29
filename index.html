@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- Google Fonts - Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- left sidebar -->
+        <aside class="dashboard__sidebar">
+            <nav class="sidebar">
+                <!-- Logo Placeholder -->
+                <div class="sidebar__logo-container">
+
+                    <div class="sidebar__logo">
+                        <img src="assets/images/logo.png" alt="Logo" class="sidebar__logo-img">
+                    </div>
+                </div>
+
+                <ul class="sidebar__list">
+                    <div class="sidebar__top">
+
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink sidebar__navlink--active">
+                                <img src="assets/icons/dashboard.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink">
+                                <img src="assets/icons/Calendar.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Schedule
+                            </a>
+                        </li>
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink">
+                                <img src="assets/icons/sms.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Message
+                            </a>
+                        </li>
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink">
+                                <img src="assets/icons/Chart.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Analytics
+                            </a>
+                        </li>
+
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink">
+                                <img src="assets/icons/profile-2user.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Team
+                            </a>
+                        </li>
+                        <div class="sidebar__divider"></div>
+
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink">
+                                <img src="assets/icons/user.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Profile
+                            </a>
+                        </li>
+
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink">
+                                <img src="assets/icons/setting.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Settings
+                            </a>
+                        </li>
+                    </div>
+
+                    <div class="sidebar__bottom">
+
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink">
+                                <img src="assets/icons/info-circle.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Help
+                            </a>
+                        </li>
+                        <li class="sidebar__item ">
+                            <a href="#" class="sidebar__navlink">
+                                <img src="assets/icons/login.svg" alt="Dashboard Icon" class="sidebar__icon">
+                                Logout
+                            </a>
+                        </li>
+                    </div>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+
+
+
+
+
+
+        <!-- Main Content Area -->
+        <main class="dashboard__main">
+            <!-- <section class="dashboard__row"> -->
+            <!-- 2nd Column (Search Bar) -->
+            <!-- <div class="dashboard__column dashboard__column--large"> -->
+            <div class="dashboard__searchbar">
+                <img src="assets/icons/search-normal.svg" alt="searchbar Icon" class="searchbar__icon">
+                <input type="text" placeholder="Search here..." class="dashboard__searchbar-input">
+            </div>
+            <!-- </div> -->
+
+            <!-- 3rd Column (Icons + Name) -->
+            <!-- <div class="dashboard__column"> -->
+            <!-- <div class="dashboard__header"> -->
+            <div class="actions">
+                <div class="actions__icon-wrapper">
+                    <img src="assets/icons/notification.svg" alt="Notification Icon" class="actions__icon">
+                </div>
+                <div class="actions__icon-wrapper">
+                    <img src="assets/icons/message-text.svg" alt="Message Icon" class="actions__icon">
+                </div>
+                <div class="actions__icon-wrapper actions__icon-active">
+                    <img src="assets/icons/gallery.svg" alt="Gallery Icon" class="actions__icon">
+                </div>
+
+
+
+                <div class="actions__user">
+                    Mirie Kiritani
+                </div>
+                <div class="actions__icon-toggle">
+
+                    <img src="assets/icons/arrow-down.svg" alt="arrow-down" class="actions__icon">
+
+                </div>
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
+            <!-- </section> -->
+
+            <!-- Second Row (2x2 Box Layout) -->
+            <!-- <section class="dashboard__row"> -->
+            <!-- 2nd Column (2x2 Boxes) -->
+
+            <div class="finance">
+                <h3>Overview</h3>
+                <div class="finance__report-wrapper">
+
+
+                    <div class="finance__report finance__report-balance">
+                        <div class="finance__report-row">
+                            <div class="finance__report-icon">
+                                <img src="assets/icons/balance.svg" alt="Balance Icon">
+                            </div>
+                            <div class="finance__report-details">
+                                <p class="finance__report-title">Your Balance</p>
+                                <p class="finance__report-percentage"><img src="assets/icons/balance-s.svg"
+                                        alt="BalanceSmall Icon"> <span>
+                                        15% compared with last month
+                                    </span></p>
+                            </div>
+                        </div>
+                        <div class="finance__report-divider"></div>
+                        <p class="finance__report-amount">
+                            <span>$28,891.138 </span><img src="./assets/icons/arrow-right.svg" alt="arrow-right">
+                        </p>
+
+
+                    </div>
+                    <div class="finance__report finance__report-saving">
+                        <div class="finance__report-row">
+                            <div class="finance__report-icon">
+                                <img src="assets/icons/save.svg" alt="Saving Icon">
+                            </div>
+                            <div class="finance__report-details">
+                                <p class="finance__report-title">Saving</p>
+                                <p class="finance__report-percentage"><img src="assets/icons/save-s.svg"
+                                        alt="SavingSmall Icon">
+                                    <span>10% compared with last month</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="finance__report-divider"></div>
+                        <p class="finance__report-amount">
+                            <span>$1,050.44</span>
+                            <img src="./assets/icons/arrow-right-black.svg" alt="arrow-right">
+                        </p>
+
+                    </div>
+
+                    <div class="finance__report finance__report-expenses">
+                        <div class="finance__report-row">
+                            <div class="finance__report-icon">
+                                <img src="assets/icons/expense.svg" alt="Expenses Icon">
+                            </div>
+                            <div class="finance__report-details">
+                                <p class="finance__report-title">Expenses</p>
+                                <p class="finance__report-percentage"><img src="assets/icons/expense-s.svg"
+                                        alt="ExpensesSmall Icon"><span>
+                                        2% compared with last month
+                                    </span></p>
+                            </div>
+                        </div>
+                        <div class="finance__report-divider"></div>
+                        <p class="finance__report-amount">
+                            <span>$200.31</span><img src="./assets/icons/arrow-right-black.svg" alt="arrow-right">
+                        </p>
+
+                    </div>
+                    <div class="finance__report finance__report-incomes">
+                        <div class="finance__report-row">
+                            <div class="finance__report-icon">
+                                <img src="assets/icons/income.svg" alt="Incomes Icon">
+                            </div>
+                            <div class="finance__report-details">
+                                <p class="finance__report-title">Incomes</p>
+                                <p class="finance__report-percentage"><img src="assets/icons/incomes-s.svg"
+                                        alt="IncomeSmall Icon">
+                                    <span>8% compared with last month</span>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="finance__report-divider"></div>
+                        <p class="finance__report-amount">
+                            <span class="amount">$221,121.0</span>
+                            <img src="./assets/icons/arrow-right-black.svg" alt="arrow-right">
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 3rd Column (List Items) -->
+            <div class="dashboard__column">
+                <ul class="dashboard__list">
+                    <li class="dashboard__list-item">Item 1</li>
+                    <li class="dashboard__list-item">Item 2</li>
+                    <li class="dashboard__list-item">Item 3</li>
+                </ul>
+            </div>
+            <!-- </section> -->
+
+            <!-- Third Row (Chart + Recent Transactions) -->
+            <!-- <section class="dashboard__row"> -->
+            <!-- 2nd Column (Chart) -->
+            <div class="dashboard__column dashboard__column--large">
+                <div class="dashboard__chart">chart js
+
+                    <canvas id="myChart">chart js</canvas>
+                </div>
+            </div>
+
+            <!-- 3rd Column (Recent Transactions) -->
+            <div class="dashboard__column">
+                <ul class="dashboard__transactions">
+                    <li class="dashboard__transaction">Transaction 1</li>
+                    <li class="dashboard__transaction">Transaction 2</li>
+                    <li class="dashboard__transaction">Transaction 3</li>
+                    <li class="dashboard__transaction">Transaction 4</li>
+                </ul>
+            </div>
+            <!-- </section> -->
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+$primary-color:#3BBB6E;
+$secondary-color:#4745A4;
+$accent-color:#F9BA33;
+$bg-color:#F7F7FB;
+
+$text-color-dark: #0D163A;
+$text-color-light: #FFFFFF;
+$text-color-primary: $primary-color;
+$text-color-secondary: $secondary-color;
+$text-color-accent: #dd9802;
+
+$font-size-xs:12px;
+$font-size-sm:14px;
+$font-size-md:16px;
+$font-size-lg:18px;
+$font-size-xl:20px;
+$font-size-xxl:28px;
+
+$border-radius-sm:14px;
+$border-radius-lg:100px;
+
+$font-weight-normal: 400;  
+$font-weight-bold: 600; 
+
+$breakpoint-xs: 320px;    /*mobile */
+$breakpoint-sm: 576px;    /* tablets*/
+$breakpoint-md: 768px;    /* tablets/large phones*/
+$breakpoint-lg: 1024px;   /* desktops*/
+$breakpoint-xl: 1200px;   /* large desktops*/
+
+$font-family-primary:"Plus Jakarta Sans";
+
+

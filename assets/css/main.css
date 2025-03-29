@@ -1,0 +1,266 @@
+/*mobile */
+/* tablets*/
+/* tablets/large phones*/
+/* desktops*/
+/* large desktops*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Plus Jakarta Sans";
+  background-color: #F7F7FB;
+}
+
+/* _base.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #3BBB6E;
+}
+
+ul {
+  list-style: none;
+}
+
+.sidebar__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.sidebar__logo-img {
+  width: 60px;
+  height: 60px;
+}
+
+/* _sidebar.scss */
+/*mobile */
+/* tablets*/
+/* tablets/large phones*/
+/* desktops*/
+/* large desktops*/
+.dashboard__sidebar {
+  width: 280px;
+  background-color: #FFFFFF;
+}
+
+.sidebar__logo-container {
+  padding: 35px 66px 16px 36px;
+}
+
+.sidebar__logo {
+  width: 100%;
+  padding: 14px 77px;
+  background-color: #D9D9D9;
+}
+.sidebar__logo img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 872px;
+  justify-content: space-between; /* Push bottom items to bottom */
+}
+
+.sidebar__item a {
+  display: flex;
+  align-items: center;
+  padding: 20px 79px 20px 49px;
+  color: #0D163A;
+  font-size: 16px;
+}
+
+.sidebar__navlink--active {
+  border-left: 4px solid #4745A4;
+  font-weight: 600;
+}
+
+.sidebar__icon {
+  width: 24px;
+  height: 26px;
+  margin-right: 14px;
+  color: red;
+}
+
+.sidebar__divider {
+  border-bottom: 1px solid rgba(13, 22, 58, 0.3);
+  width: 219px;
+  height: 1px;
+  margin: 32px 30px;
+}
+
+.dashboard__main {
+  display: grid;
+  grid-template-columns: 781px auto;
+  grid-template-rows: 64px auto auto;
+  gap: 32px 32px;
+  padding: 32px 0 0 32px;
+}
+
+.dashboard__searchbar {
+  position: relative;
+  width: 100%;
+  border-radius: 100px;
+}
+
+.dashboard__searchbar-input {
+  width: 100%;
+  padding: 20px 0 20px 46px;
+  outline: none;
+  font-size: 16px;
+  border: none;
+  border-radius: 100px;
+}
+.dashboard__searchbar-input::placeholder {
+  font-size: 14px;
+}
+
+.searchbar__icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-70%);
+}
+
+.actions {
+  display: flex;
+  column-gap: 10px;
+  background-color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 100px;
+}
+.actions__icon {
+  width: 24px;
+  height: 24px;
+}
+.actions__icon-wrapper {
+  padding: 12px 21px;
+  border-radius: 100px;
+  border: 1px solid #F7F7FB;
+}
+.actions__icon-active {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.actions__user {
+  font-size: 16px;
+  width: 90px;
+}
+
+.finance {
+  background-color: #FFFFFF;
+  padding: 16px;
+  border-radius: 14px;
+}
+.finance__report-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 18px;
+}
+.finance__report {
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(222, 222, 222, 0.7);
+}
+.finance__report-row {
+  display: flex;
+  align-items: center;
+  column-gap: 9px;
+}
+.finance__report-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0D163A;
+  margin-bottom: 9px;
+}
+.finance__report-icon {
+  border-radius: 100px;
+  border: 1px solid rgba(222, 222, 222, 0.2);
+  padding: 8px 10px;
+}
+.finance__report-icon img {
+  width: 32px;
+  height: 32px;
+}
+.finance__report-percentage {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+.finance__report-percentage span {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(13, 22, 58, 0.6);
+  opacity: 0.6;
+}
+.finance__report-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.finance__report-amount span {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+.finance__report-divider {
+  width: 100%;
+  border-bottom: 1px solid rgba(13, 22, 58, 0.2);
+  margin: 21.25px 0;
+}
+.finance__report-balance {
+  background-color: #4745A4;
+  color: #FFFFFF;
+}
+.finance__report-balance .finance__report-title {
+  color: #FFFFFF;
+}
+.finance__report-balance .finance__report-percentage span {
+  letter-spacing: 0px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dashboard {
+  display: flex;
+}
+
+/*# sourceMappingURL=main.css.map */
