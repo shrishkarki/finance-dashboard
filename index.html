@@ -106,18 +106,12 @@
 
         <!-- Main Content Area -->
         <main class="dashboard__main">
-            <!-- <section class="dashboard__row"> -->
-            <!-- 2nd Column (Search Bar) -->
-            <!-- <div class="dashboard__column dashboard__column--large"> -->
+            
             <div class="dashboard__searchbar">
                 <img src="assets/icons/search-normal.svg" alt="searchbar Icon" class="searchbar__icon">
                 <input type="text" placeholder="Search here..." class="dashboard__searchbar-input">
             </div>
-            <!-- </div> -->
-
-            <!-- 3rd Column (Icons + Name) -->
-            <!-- <div class="dashboard__column"> -->
-            <!-- <div class="dashboard__header"> -->
+            
             <div class="actions">
                 <div class="actions__icon-wrapper">
                     <img src="assets/icons/notification.svg" alt="Notification Icon" class="actions__icon">
@@ -140,14 +134,7 @@
 
                 </div>
             </div>
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- </section> -->
-
-            <!-- Second Row (2x2 Box Layout) -->
-            <!-- <section class="dashboard__row"> -->
-            <!-- 2nd Column (2x2 Boxes) -->
-
+           
             <div class="finance">
                 <h3>Overview</h3>
                 <div class="finance__report-wrapper">
@@ -237,20 +224,66 @@
                 </div>
             </div>
 
+<!-- saving plan -->
+          
+<section class="saving">
+    <header class="saving__header">
+        <h3 class="saving__title">Saving Plan</h3>
+        <a href="#" class="saving__seeall">See All</a>
+    </header>
 
-            <!-- 3rd Column (List Items) -->
-            <div class="dashboard__column">
-                <ul class="dashboard__list">
-                    <li class="dashboard__list-item">Item 1</li>
-                    <li class="dashboard__list-item">Item 2</li>
-                    <li class="dashboard__list-item">Item 3</li>
-                </ul>
+    <div class="saving__divider"></div>
+
+    <div class="saving__list">
+        <!-- Bali Vacation -->
+        <article class="saving__item">
+            <div class="saving__goal">
+                <h4 class="saving__goal-title">Bali Vacation</h4>
+                <span class="saving__goal-target">Target: August 25, 2022</span>
             </div>
-            <!-- </section> -->
+            <div class="saving__data">
+                <span class="saving__data-amount">$1950.21 <sub>/$4000</sub> </span>
+                <span class="saving__data-percentage saving__data-percentage--bali">48%</span>
+            </div>
+           
+                <progress class="saving__progressbar saving__progressbar--bali" value="48" max="100"></progress>
+            
+        </article>
 
-            <!-- Third Row (Chart + Recent Transactions) -->
-            <!-- <section class="dashboard__row"> -->
-            <!-- 2nd Column (Chart) -->
+        <!-- New Gadget -->
+        <article class="saving__item">
+            <div class="saving__goal">
+                <h4 class="saving__goal-title">New Gadget</h4>
+                <span class="saving__goal-target">Target: December 15, 2022</span>
+            </div>
+            <div class="saving__data">
+                <span class="saving__data-amount">$1200.00 <sub>/$2500</sub></span>
+                <span class="saving__data-percentage saving__data-percentage--gadget">79%</span>
+            </div>
+           
+                <progress class="saving__progressbar saving__progressbar--gadget" value="79" max="100"></progress>
+            
+        </article>
+
+        <!-- Charity -->
+        <article class="saving__item">
+            <div class="saving__goal">
+                <h4 class="saving__goal-title">Charity</h4>
+                <span class="saving__goal-target">Target: March 10, 2023</span>
+            </div>
+            <div class="saving__data">
+                <span class="saving__data-amount">$500.00 <sub>/$1000</sub></span>
+                <span class="saving__data-percentage saving__data-percentage--charity">32%</span>
+            </div>
+           
+                <progress class="saving__progressbar saving__progressbar--charity" value="32" max="100"></progress>
+            
+        </article>
+        
+    </div>
+</section>
+
+           
             <div class="dashboard__column dashboard__column--large">
                 <div class="dashboard__chart">chart js
 
