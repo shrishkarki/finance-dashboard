@@ -10,21 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
-
-    <script src="./assets/js/chart.js" defer></script>
     <script src="./assets/js/index.js" defer></script>
+    <script src="./assets/js/chart.js" defer></script>
+
 
 </head>
 
 <body>
     <div class="dashboard">
-  <!-- Backdrop -->
-  <div class="dashboard__backdrop" id="sidebarBackdrop"></div>
+      
 
-        <button class="hamburger" id="hamburger">
+        <button id="hamburger">
             &#9776;
         </button>
-        
+
 
         <!-- left sidebar -->
         <aside class="dashboard__sidebar">
@@ -36,16 +35,13 @@
                         <img src="assets/images/logo.png" alt="Logo" class="sidebar__logo-img">
                     </div>
 
-                    <!-- <button class="hamburgers" id="hamburgers">
-                        &#9776;
-                    </button> -->
                     <button class="sidebar__toggle" id="sidebarToggle">
                         &gt;
                     </button>
                     <button id="hamburger__close">
-                        &gt;
+                        &lt;
                     </button>
-                 
+
                 </div>
 
                 <ul class="sidebar__list">
@@ -120,9 +116,6 @@
             </nav>
 
         </aside>
-
-
-
 
 
 
@@ -309,31 +302,33 @@
                 </div>
             </section>
 
-<!-- chart -->
+            <!-- chart -->
 
-       <div class="chart">
-    <div class="chart__header">
-        <h2 class="chart__title">Analytics</h2>
-        <div class="chart__labels">
-            <span class="chart__label chart__label--primary"><span class="chart__label-color chart__label-color--secondary"></span>Label1</span>
-            <span class="chart__label chart__label--secondary"><span class="chart__label-color chart__label-color--accent"></span>Label2</span>
+            <div class="chart">
+                <div class="chart__header">
+                    <h2 class="chart__title">Analytics</h2>
+                    <div class="chart__labels">
+                        <span class="chart__label chart__label--primary"><span
+                                class="chart__label-color chart__label-color--secondary"></span>Label1</span>
+                        <span class="chart__label chart__label--secondary"><span
+                                class="chart__label-color chart__label-color--accent"></span>Label2</span>
 
-            <div class="chart__dropdown">
-                <select class="chart__select">
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
-                    <option value="yearly">Yearly</option>
-                </select>
+                        <div class="chart__dropdown">
+                            <select class="chart__select">
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="chart__body">
+                    <div id="chart__display"></div>
+                </div>
             </div>
-        </div>
-       
-    </div>
-    <div class="chart__body">
-        <div id="chart__display"></div>
-    </div>
-</div>
 
-           
+
             <section class="transaction">
 
                 <header class="transaction__header">
@@ -427,39 +422,17 @@
             </section>
 
     </div>
-    
+
     </main>
     </div>
 
 
-    <script>
+
+    
 
 
 
-
-
-// Get the elements
-const hamburger = document.getElementById('hamburger');
-const hamburgerClose=document.getElementById("hamburger__close");
-const sidebar = document.querySelector('.dashboard__sidebar');
-
-// Add event listener to the hamburger button
-hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('show'); // Toggle 'open' class on the sidebar
-    // sidebar.classList.toggle('hide')
-});
-hamburgerClose.addEventListener('click',()=>{
-    sidebar.classList.toggle('show');
-    sidebar.classList.toggle('hide')
-})
-
-
-
-
-
-
-
-    </script>
+    
 
 </body>
 

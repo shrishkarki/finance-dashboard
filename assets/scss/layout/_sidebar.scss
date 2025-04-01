@@ -1,12 +1,15 @@
-/* _sidebar.scss */
-@import "../abstracts/variable";
-
 
 
 .dashboard__sidebar {
   width: 280px;
   background-color: #FFFFFF;
   transition: width 0.3s ease;
+  
+
+
+  &.open{
+    width: 250px;
+  }
 
   @include media-query(1200px) {
     width: 230px;
@@ -15,6 +18,7 @@
   @include media-query(1080px) {
     width: 180px;
   }
+
 
   @include media-query(860px) {
     position: sticky;
@@ -26,23 +30,16 @@
   }
 
   @include media-query(650px) {
-
     position: fixed;
     left: -250px;
-
-
     &.hide {
       left: -250px;
     }
-
     &.show {
-
       left: 0;
-
       width: 250px;
-
-
     }
+  
   }
 
 }
@@ -66,27 +63,21 @@
 }
 
 .sidebar__logo {
+  @include flex();
   width: 100%;
   padding: 14px 77px;
-  // transition: padding 0.3s ease;
-  transition: padding 1s ease, background-color 1s ease; // Smooth transition
-  @include flex();
+  transition: padding 1s ease, background-color 1s ease; 
 
   @include media-query(1150px) {
     padding: 10px 17px;
   }
-
   @include media-query(860px) {
     padding: 10px 0px;
   }
-
   background-color: #D9D9D9;
-
   img {
     width: 24px;
     height: 24px;
-
-
   }
 }
 
@@ -94,12 +85,29 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  /* Push bottom items to bottom */
-  height: 872px;
+ row-gap: 300px;
+  
+  height: 700px;
+ 
+  
+
+  @include media-query(1050px){
+    row-gap: 50px;
+    
+  }
 }
 
-
+  .sidebar__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .sidebar__logo-img {
+    width: 60px;
+    height: 60px;
+   
+  }
 .sidebar__item {
   a {
     display: flex;
@@ -107,6 +115,7 @@
     padding: 20px 79px 20px 49px;
     color: $text-color-dark;
     font-size: $font-size-md;
+    opacity: 1;
 
     @include media-query(1080px) {
       padding: 15px 20px 10px 25px;
@@ -130,15 +139,12 @@
   position: absolute;
   top: 50%;
   right: -14px;
-  transform: translateY(-30%);
-  background: #ffffff;
+  transform: translateY(-50%);
   border: 1px solid #ddd;
-  border-radius: 50%;
+  @include box($padding:0px);
   width: 30px;
   height: 30px;
-  font-size: 15px;
-  font-weight: bold;
-  color: rgba($color: #0D163A, $alpha: 0.7);
+  @include text-style(15px,$font-weight-bold,rgba($color: #0D163A, $alpha: 0.7));
   cursor: pointer;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
@@ -149,12 +155,17 @@
 
 }
 
-.sidebar__item a span {
+.sidebar__item{
+  &:not(:first-child) {
+    /* Add styles for all li except the first one */
+    opacity: 0.7;
+}
+ a span {
   display: inline-block;
   opacity: 1;
   transform: translateX(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
-}
+}}
 
 
 @media (max-width: 860px) {
@@ -165,10 +176,7 @@
   .sidebar__item a span {
     opacity: 0;
     transform: translateX(-10px);
-    /* Move text slightly left */
     display: none;
-
-    /* Initially hidden */
     @include media-query(650px) {
       display: inline-block;
       opacity: 1;
@@ -185,26 +193,25 @@
 
 
 
-.dashboard__sidebar.open {
-  width: 250px;
-  /* Expanded width */
-}
+// .dashboard__sidebar.open {
+//   width: 250px;
+// }
 
 
-
-
-//testing end
-
-
-.sidebar__navlink--active {
+.sidebar__navlink{
+  &:hover{
+    border-left: 4px solid $secondary-color;
+  }
+&--active {
   border-left: 4px solid $secondary-color;
   font-weight: $font-weight-bold;
+  font-size: 50px;
+  
+  
+}
 }
 
-// .sidebar__item a:hover {
-//   background-color: red;
-//   color: red;
-// }
+
 
 .sidebar__icon {
   width: 24px;
@@ -215,30 +222,16 @@
 
 .sidebar__divider {
   border-bottom: 1px solid rgb(13, 22, 58, 0.3);
-  // width: 219px;
-  // height: 1px;
-  // background-color: $text-color-dark;
+  
   margin: 32px 30px;
-  // opacity: 30%;
+ 
 
 }
 
 
-// .sidebar__navlink {
-//   display: flex;
-//   align-items: center;
-//   padding: 10px;
-//   color: $text-color-light;
-//   text-decoration: none;
-//   transition: color 0.3s;
-// }
-
-// .sidebar__navlink:hover {
-//   color: red;
-// }
 
 
-.hamburger {
+#hamburger {
   display: none;
   font-size: 24px;
   background: none;
@@ -255,6 +248,24 @@
   }
 }
 
-.hamburger__close {
+#hamburger__close {
   display: none;
+  position: absolute;
+  top: 50%;
+ right: 0;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  @include text-style($font-size-lg,bold,rgba($color: #0D163A, $alpha: 0.7));
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  @include media-query(650px){
+    display: block;
+    // right: -10px;
+    
+  }
 }

@@ -2,31 +2,17 @@
 .dashboard__main {
     display: grid;
     grid-template-columns: auto auto;
-    // grid-template-columns: minmax(500px, auto) minmax(350px, auto);
-    // grid-template-rows: 64px auto auto;
     gap: 32px 32px;
-    padding: 32px 32px 0 32px;
-    width: 80%; /* Ensure the grid container takes full width */
+    padding: 32px;
+    width: 80%; 
 
     @include media-query(1050px) {
        grid-template-columns: 1fr;
       
     }
-
-    // @include media-query(1235px) {
-    //     padding: 21px 21px 0 21px;
-    //     gap: 20px 20px;
-    // }
-
-    // @include media-query(996px) {
-    //     grid-template-columns: 380px 380px;
-    // }
-
-    // @include media-query(900px) {
-    //     grid-template-columns: minmax(290px, auto) minmax(340px, auto);
-    // }
-
-  
+    @include media-query(650px){
+        width: 100%;
+    }
 
 }
 
@@ -35,31 +21,29 @@
     position: relative;
     width: 100%;
     border-radius: 100px;
-
-
-}
-
-.dashboard__searchbar-input {
-    width: 100%;
-    height: 100%;
-    padding: 20px 0 20px 46px;
-    outline: none;
-    font-size: $font-size-md;
-    border: none;
-    border-radius: 100px;
-
-    @include media-query(800px) {
-        padding: 15px 0 15px 38px;
-    }
-
-    &::placeholder {
-        font-size: $font-size-sm;
-
+    &-input {
+        width: 100%;
+        height: 100%;
+        padding: 20px 0 20px 46px;
+        outline: none;
+        font-size: $font-size-md;
+        border: none;
+        border-radius: 100px;
+    
         @include media-query(800px) {
-            font-size: $font-size-xs;
+            padding: 15px 0 15px 38px;
+        }
+    
+        &::placeholder {
+            font-size: $font-size-sm;
+    
+            @include media-query(800px) {
+                font-size: $font-size-xs;
+            }
         }
     }
 }
+
 
 .searchbar__icon {
     position: absolute;
@@ -95,8 +79,6 @@
         background-color: transparent;
         justify-content: end;
         column-gap: 10px;
-
-
     }
 
     &__icon {
@@ -120,7 +102,6 @@
             border: 1px solid #DEDEDE;
             @include flex();
 
-
             @include media-query(996px) {
                 @include box(none, 8px 15px);
             }
@@ -132,16 +113,15 @@
 
 
         &--active {
+            @include flex();
             background-color: rgba(0, 0, 0, 0.2);
             border-radius: 50%;
             height: 48px;
             width: 48px;
-            @include flex();
             outline: 1px solid #DEDEDE;
             outline-offset: 1px;
 
             @include media-query(996px) {
-
                 height: 34px;
                 width: 34px;
             }
@@ -300,6 +280,7 @@
 
                 @include text-style($font-size-xxl, $font-weight-bold, $text-color-dark);
                 letter-spacing: -2px;
+                line-height: 100%;
 
                 @include media-query(1280px) {
                     @include text-style($font-size-xl, $font-weight-bold, $text-color-dark);
@@ -661,10 +642,5 @@
         font-size: 14px;
     }
  
-
-    // &__display{
-    //     width: 100%;
-    //     height: 4000px;
-    // }
 }
 

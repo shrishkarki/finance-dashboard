@@ -1,11 +1,4 @@
-@import "reset";
 
-body {
-    font-family: $font-family-primary;
-    background-color: #F7F7FB;
-  }
-
-  /* _base.scss */
 a {
     text-decoration: none;
     color: inherit;
@@ -23,17 +16,5 @@ a {
     font-weight: normal;
   }
   
-  .sidebar__icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
-  .sidebar__logo-img {
-    width: 60px;
-    height: 60px;
-    // border-radius: 50%;
-    // object-fit: cover;
-    // border: 2px solid $text-color-light;
-  }
+
   
