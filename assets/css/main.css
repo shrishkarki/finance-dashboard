@@ -19,7 +19,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Plus Jakarta Sans";
-  font-weight: 400 !important;
   background-color: #F7F7FB;
 }
 
@@ -153,6 +152,9 @@ h1, h2, h3 {
   height: 60px;
 }
 
+.sidebar__item:not(:first-child) {
+  opacity: 0.7;
+}
 .sidebar__item a {
   display: flex;
   align-items: center;
@@ -167,10 +169,29 @@ h1, h2, h3 {
     text-align: center;
   }
 }
-@media (max-width: 500px) {
+.sidebar__item a span {
+  display: inline-block;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+@media (max-width: 860px) {
   .sidebar__item a span {
-    display: flex;
+    opacity: 0;
+    transform: translateX(-10px);
+    display: none;
   }
+}
+@media (max-width: 860px) and (max-width: 650px) {
+  .sidebar__item a span {
+    display: inline-block;
+    opacity: 1;
+  }
+}
+.sidebar__item a span.show-span {
+  display: inline-block;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sidebar__toggle {
@@ -192,46 +213,17 @@ h1, h2, h3 {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
+@media (max-width: 860px) {
+  .sidebar__toggle {
+    display: block;
+  }
+}
 @media (max-width: 650px) {
   .sidebar__toggle {
     display: none !important;
   }
 }
 
-.sidebar__item:not(:first-child) {
-  /* Add styles for all li except the first one */
-  opacity: 0.7;
-}
-.sidebar__item a span {
-  display: inline-block;
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-@media (max-width: 860px) {
-  .sidebar__toggle {
-    display: block;
-  }
-  .sidebar__item a span {
-    opacity: 0;
-    transform: translateX(-10px);
-    display: none;
-  }
-}
-@media (max-width: 860px) and (max-width: 650px) {
-  .sidebar__item a span {
-    display: inline-block;
-    opacity: 1;
-  }
-}
-@media (max-width: 860px) {
-  .sidebar__item a span.show-span {
-    display: inline-block;
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 .sidebar__navlink:hover {
   border-left: 4px solid #4745A4;
 }
@@ -245,7 +237,6 @@ h1, h2, h3 {
   width: 24px;
   height: 26px;
   margin-right: 14px;
-  color: red;
 }
 
 .sidebar__divider {
