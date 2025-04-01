@@ -302,13 +302,29 @@
                 </div>
             </section>
 
+<!-- chart -->
 
-            <div class="charts">
-                <div class="dashboard__chart">chart js
+       <div class="chart">
+    <div class="chart__header">
+        <h2 class="chart__title">Analytics</h2>
+        <div class="chart__labels">
+            <span class="chart__label chart__label--primary"><span class="chart__label-color chart__label-color--secondary"></span>Label1</span>
+            <span class="chart__label chart__label--secondary"><span class="chart__label-color chart__label-color--accent"></span>Label2</span>
 
-                    <div id="chart">chart js</div>
-                </div>
+            <div class="chart__dropdown">
+                <select class="chart__select">
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
             </div>
+        </div>
+       
+    </div>
+    <div class="chart__body">
+        <div id="chart__display"></div>
+    </div>
+</div>
 
             <!-- 3rd Column (Recent Transactions) -->
             <section class="transaction">
@@ -421,37 +437,24 @@ document.getElementById("sidebarToggle").addEventListener("click", function() {
     spans.forEach(span => {
         if (isHidden) {
             span.classList.remove("show-span");
-            setTimeout(() => (span.style.display = "none"), 300); // Hide after transition
+            setTimeout(() => (span.style.display = "none"), 300); 
         } else {
             span.style.display = "inline-block";
-            setTimeout(() => span.classList.add("show-span"), 10); // Ensure transition runs
+            setTimeout(() => span.classList.add("show-span"), 10); 
         }
     });
 
-    // Toggle button text between ">" and "<"
+    
     this.innerHTML = isHidden ? "&gt;" : "&lt;";
 });
 
-// const sidebar = document.getElementById("sidebar");
-// const toggleButton = document.getElementById("sidebarToggle");
-// const overlay = document.createElement("div"); // Create overlay element
-// overlay.classList.add("sidebar-overlay");
-// document.body.appendChild(overlay);
 
-// toggleButton.addEventListener("click", function () {
-//     sidebar.classList.toggle("open");
-//     overlay.classList.toggle("active");
 
-//     // Toggle button icon
-//     this.innerHTML = sidebar.classList.contains("open") ? "&lt;" : "&gt;";
-// });
 
-// // Hide sidebar when clicking outside
-// overlay.addEventListener("click", function () {
-//     sidebar.classList.remove("open");
-//     overlay.classList.remove("active");
-//     toggleButton.innerHTML = "&gt;";
-// });
+
+
+
+
 
     </script>
 

@@ -1,131 +1,102 @@
-var options = {
+
+
+const areaChartOptions = {
     series: [
         {
-            name: "Upper Layer",
-            // data: [12000, 15000, 9000, 17000, 14000, 21000, 18000]
+            name: 'Balance',
+            data: [4500, 6000, 8000, 10000, 11000, 10000, 9000],
         },
         {
-            name: "Lower Layer",
-            // data: [5000, 7000, 4000, 10000, 9000, 12000, 11000]
-        }
+            name: 'Expenses',
+            data: [12000, 10000, 9000, 12000, 18000, 20000, 18000],
+        },
     ],
     chart: {
-        type: 'area',
         height: 350,
-        background: '#121212'
+        type: 'area',
+        toolbar: {
+            show: false,
+        },
     },
+    colors: ['#F8CD70', '#4745A4'],
     dataLabels: {
-        enabled: false
+        enabled: false,
     },
     stroke: {
-        curve: 'smooth'
+        curve: 'smooth',
+        width:2,
+        colors: ['#F9BA33', '#4745A4'],
+    },
+    labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    markers: {
+        size: 0,
     },
     xaxis: {
-        categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], 
         labels: {
             style: {
-                colors: 'white'
-            }
+                colors: '#999999',
+                fontSize: '14px'
+            },
+
+        },
+
+        axisBorder: {
+            show: false
+        },
+        axisTicks: {
+            show: false 
         }
     },
     yaxis: {
-        show: true,
-        showAlways: false,
-        showForNullSeries: true,
-        seriesName: undefined,
-        opposite: false,
-        reversed: false,
-        logarithmic: false,
-        logBase: 10,
-        tickAmount: 6, // Ensures 6 ticks
         min: 0,
         max: 20000,
-        tickPositions: [0, 1000, 5000, 10000, 15000, 20000], // Hardcoded tick values
-        stepSize: undefined,
-        forceNiceScale: false,
-        floating: false,
-        decimalsInFloat: undefined,
+        tickAmount: 4,
         labels: {
-            show: true,
-            showDuplicates: false,
-            align: 'right',
-            minWidth: 0,
-            maxWidth: 160,
+            formatter: function (value) {
+                return value / 1000 + 'k';
+            },
             style: {
-                colors: [],
-                fontSize: '12px',
-                fontFamily: 'Helvetica, Arial, sans-serif',
-                fontWeight: 400,
-                cssClass: 'apexcharts-yaxis-label',
-            },
-            offsetX: 0,
-            offsetY: 0,
-            rotate: 0,
-            formatter: (value) => {
-                if (value === 0) return '0K';
-                if (value === 1000) return 'K';
-                return value / 1000 + 'K';
-            },
+                colors: '#999999',
+                fontSize: '14px'
+            }
+        }
+        ,
+  
+    },
+    grid: {
+        borderColor: '#EBEBEB',
+        strokeDashArray: 12,
+        yaxis: {
+            lines: {
+                show: true
+            }
         },
-        axisBorder: {
-            show: true,
-            color: '#78909C',
-            offsetX: 0,
-            offsetY: 0
-        },
-        axisTicks: {
-            show: true,
-            borderType: 'solid',
-            color: '#78909C',
-            width: 6,
-            offsetX: 0,
-            offsetY: 0
-        },
-        title: {
-            text: undefined,
-            rotate: -90,
-            offsetX: 0,
-            offsetY: 0,
-            style: {
-                color: undefined,
-                fontSize: '12px',
-                fontFamily: 'Helvetica, Arial, sans-serif',
-                fontWeight: 600,
-                cssClass: 'apexcharts-yaxis-title',
-            },
-        },
-        crosshairs: {
-            show: true,
-            position: 'back',
-            stroke: {
-                color: '#b6b6b6',
-                width: 1,
-                dashArray: 0,
-            },
-        },
-        tooltip: {
-            enabled: true,
-            offsetX: 0,
-        },
-    }
-    ,
-    fill: {
-        type: 'gradient',
-        gradient: {
-            shadeIntensity: 1,
-            opacityFrom: 0.6,
-            opacityTo: 0.8,
-            stops: [0, 100]
+        xaxis: {
+            lines: {
+                show: false
+            }
+
         }
     },
-    colors: ['#3838BA', '#FFC266'],
-    grid: {
-        borderColor: 'rgba(255, 255, 255, 0.3)'
-    },
     legend: {
-        show: false
-    }
+        show: false, 
+    },
+
+    tooltip: {
+        shared: true,
+        intersect: false,
+    },
 };
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
+const areaChart = new ApexCharts(
+    document.querySelector('#chart__display'),
+    areaChartOptions
+);
+areaChart.render();
+
+
+
+
+
+

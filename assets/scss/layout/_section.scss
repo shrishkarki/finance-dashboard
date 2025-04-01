@@ -472,18 +472,12 @@
         appearance: none;
 
         &::-webkit-progress-bar {
-            // background-color: #DEDEDE;
-            // height: 100%;
-            // border-radius: 100px;
             height: 100%;
 
             @include box(#DEDEDE, 0, 100px)
         }
 
         &--bali::-webkit-progress-value {
-            // background-color: $secondary-color;
-
-            // border-radius: 100px;
             height: 100%;
             @include box($secondary-color, 0, 100px)
         }
@@ -501,8 +495,6 @@
 }
 
 // transaction
-
-
 
 .transaction {
 
@@ -604,9 +596,6 @@
     }
 
     &__amount {
-        // font-size: $font-size-lg;
-        // font-weight: $font-weight-bold;
-        // color: $text-color-dark;
         @include text-style($font-size-lg, $font-weight-bold, $text-color-dark);
         line-height: 24px;
 
@@ -617,9 +606,6 @@
     }
 
     &__status {
-        // font-weight: $font-weight-bold;
-        // font-size: $font-size-xs;
-        // color: $primary-color;
         @include text-style($font-size-xs, $font-weight-bold, $primary-color);
         letter-spacing: -1px;
     }
@@ -629,33 +615,81 @@
 
 // chartt
 
-#chart {
+
+.chart {
+    @include box(#FFFFFF, 20px, 14px);
+
+    &__title {
+        @include text-style($font-size-xl, $font-weight-extrabold, $text-color-dark);
+        letter-spacing: -1px;
+    }
+
+    &__header {
+        @include flex(space-between);
+    }
+
+    &__labels {
+        @include flex(space-around, $col-gap: 32px);
+        @include media-query(996px){
+            @include flex($direction:column-reverse,$row-gap:15px)
+        }
+    }
+
+    &__label {
+        @include text-style($font-size-sm,$font-weight-large,$text-color-dark);
+        span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 12px;
+
+        }
+        &-color--secondary {
+            background-color: $secondary-color;
+        }
+    
+        &-color--accent {
+            background-color: $accent-color;
+        }
+    }
+
+    &__select{
+        border: 1px solid #DEDEDE;
+        border-radius: 8px;
+        padding: 8px;
+        color: #7C7C7C;
+        font-size: 14px;
+    }
+ 
+
+}
+
+#chart__display {
     width: 100%;
     height: 400px;
-    // background: linear-gradient(to bottom, #4A4A4A, #333333); /* Dark gradient background */
-    border-radius: 8px;
-    padding: 20px;
-    box-sizing: border-box;
+   
+
 }
 
-.apexcharts-gridline {
-    stroke: #666 !important;
-    /* Lighter grid lines */
-    stroke-dasharray: 4 !important;
-    /* Dashed grid lines */
-}
+// .apexcharts-gridline {
+//     stroke:#EBEBEB !important;
+   
+//     stroke-dasharray: 12 !important;
+    
+// }
 
-.apexcharts-yaxis-label {
-    fill: #999 !important;
-    /* Lighter Y-axis labels */
-}
+// .apexcharts-yaxis-label {
+//     fill: #999999 !important;
+   
+// }
 
-.apexcharts-xaxis-label {
-    fill: #999 !important;
-    /* Lighter X-axis labels */
-}
+// .apexcharts-xaxis-label {
+//     fill: #999999 !important;
+   
+// }
 
-.apexcharts-legend-text {
-    fill: #999 !important;
-    /* Lighter legend text */
-}
+// .apexcharts-legend-text {
+//     fill: green !important;
+    
+// }
