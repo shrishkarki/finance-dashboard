@@ -1,0 +1,30 @@
+@mixin flex($justify:center,$align:center,$direction:row,$row-gap:0,$col-gap:0){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    gap: $row-gap $col-gap;
+}
+
+@mixin box($bg: #ffffff, $padding: 16px, $radius: 100px){
+    padding: $padding;
+    border-radius: $radius;
+    @if $bg != none{
+        background-color: $bg;
+    }
+}
+
+@mixin text-style($size: 16px, $weight: normal, $color: inherit) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+  }
+
+  @mixin media-query($breakpoint) {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+
+  
+  

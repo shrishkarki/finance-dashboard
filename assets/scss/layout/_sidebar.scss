@@ -4,18 +4,51 @@
 .dashboard__sidebar {
     width: 280px;
     background-color:#FFFFFF;
-    // padding: 35px 0 32px 0px;
-    // border: 1px solid red;
-    // display: flex;
+    transition: width 0.3s ease;
+
+    @include media-query(1200px){
+      width: 230px;
+    }
+    @include media-query(996px){
+      width: auto;
+    }
+    @include media-query(500px){
+      position: fixed;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      z-index: 200;
+    
+      
+      transition: left 0.3s ease;
+      &.open{
+       
+          left: 0px;
+  
+      }
+    }
    
   }
   .sidebar__logo-container{
+    position: relative;
  padding: 35px 66px 16px 36px;
+ @include media-query(1150px){
+  padding:25px 40px 10px 26px ;
+ }
+ @include media-query(1080px){
+  padding:25px 20px 10px 16px ;
+ }
   }
   
   .sidebar__logo {
     width: 100%;
     padding: 14px 77px;
+    // transition: padding 0.3s ease;
+    transition: padding 1s ease, background-color 1s ease; // Smooth transition
+    @include flex();
+    @include media-query(1150px){
+      padding: 10px 17px;
+    }
     
     background-color: #D9D9D9;
     img{
@@ -30,14 +63,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 872px;
     justify-content: space-between; /* Push bottom items to bottom */
+    height: 872px;
   }
   
-  // .sidebar__item {
-  //   padding: ;
-  // }
-  
+
   .sidebar__item {
   a {
     display: flex;
@@ -45,11 +75,117 @@
     padding: 20px 79px 20px 49px;
     color: $text-color-dark;
     font-size: $font-size-md;
-   
-    // transition: background-color 0.3s;
-    // font-weight: $font-weight-normal;
+
+    @include media-query(1080px){
+      padding: 15px 20px 10px 25px;
+      text-align: center;
+    }
+   span{
+    
+    // @include media-query(1150px){
+    //   display: none;
+    // }
+    @include media-query(500px){
+      display: flex;
+    }
+   }
   }
 }
+//testing
+
+
+
+.sidebar__toggle{
+  display: none;
+  position: absolute;
+  top:50%;
+  right: -14px;
+  transform: translateY(-30%);
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgba($color: #0D163A, $alpha: 0.7);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.sidebar__item a span {
+  display: inline-block;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 1150px) {
+  .sidebar__toggle{
+    display: block;
+  }
+  .sidebar__item a span {
+      opacity: 0;
+      transform: translateX(-10px); /* Move text slightly left */
+      display: none; /* Initially hidden */
+  }
+
+  .sidebar__item a span.show-span {
+      display: inline-block;
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+
+
+
+// /* Default sidebar styles */
+// #sidebar {
+//   position: relative;
+//   width: 250px; /* Default sidebar width */
+//   transition: transform 0.3s ease-in-out;
+// }
+
+// /* On smaller screens, hide the sidebar initially */
+// @media (max-width: 1150px) {
+//   #sidebar {
+//       position: absolute;
+//       left: 0;
+//       top: 0;
+//       height: 100vh;
+//       width: 250px;
+//       background: white;
+//       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+//       transform: translateX(-100%); /* Hide sidebar */
+//       z-index: 1000; /* Ensure it's above content */
+//   }
+
+//   /* Show sidebar when active */
+//   #sidebar.open {
+//       transform: translateX(0);
+//   }
+
+//   /* Overlay effect to indicate focus */
+//   .sidebar-overlay {
+//       position: fixed;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       background: rgba(0, 0, 0, 0.4);
+//       z-index: 999;
+//       display: none;
+//   }
+
+//   .sidebar-overlay.active {
+//       display: block;
+//   }
+// }
+
+
+//testing
+
   
   .sidebar__navlink--active {
    border-left:4px solid $secondary-color; 
@@ -69,8 +205,8 @@
   }
   .sidebar__divider {
     border-bottom: 1px solid rgb(13, 22, 58,0.3);
-    width: 219px;
-    height: 1px;
+    // width: 219px;
+    // height: 1px;
     // background-color: $text-color-dark;
     margin: 32px 30px;
     // opacity: 30%;
@@ -90,4 +226,23 @@
   // .sidebar__navlink:hover {
   //   color: red;
   // }
+
+
+  .hamburger {
+    // display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 100;
+    @include media-query(500px){
+      display: block;
+
+    }
+}
+
+
   

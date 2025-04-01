@@ -9,13 +9,21 @@
     <!-- Google Fonts - Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap"
         rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+
+    <script src="./assets/js/chart.js" defer></script>
 
 </head>
 
 <body>
     <div class="dashboard">
+
+        <!-- <button class="hamburger" id="hamburger">
+            &#9776;
+        </button> -->
+
         <!-- left sidebar -->
-        <aside class="dashboard__sidebar">
+        <aside class="dashboard__sidebar" id="sidebar">
             <nav class="sidebar">
                 <!-- Logo Placeholder -->
                 <div class="sidebar__logo-container">
@@ -23,6 +31,14 @@
                     <div class="sidebar__logo">
                         <img src="assets/images/logo.png" alt="Logo" class="sidebar__logo-img">
                     </div>
+
+                    <!-- <button class="hamburgers" id="hamburgers">
+                        &#9776;
+                    </button> -->
+                    <button class="sidebar__toggle" id="sidebarToggle">
+                        &gt;
+                    </button>
+                 
                 </div>
 
                 <ul class="sidebar__list">
@@ -31,32 +47,32 @@
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink sidebar__navlink--active">
                                 <img src="assets/icons/dashboard.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Dashboard
+                                <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink">
                                 <img src="assets/icons/Calendar.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Schedule
+                                <span>Schedule</span>
                             </a>
                         </li>
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink">
                                 <img src="assets/icons/sms.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Message
+                                <span>Message</span>
                             </a>
                         </li>
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink">
                                 <img src="assets/icons/Chart.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Analytics
+                                <span>Analytics</span>
                             </a>
                         </li>
 
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink">
                                 <img src="assets/icons/profile-2user.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Team
+                                <span> Team </span>
                             </a>
                         </li>
                         <div class="sidebar__divider"></div>
@@ -64,14 +80,14 @@
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink">
                                 <img src="assets/icons/user.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Profile
+                                <span>Profile</span>
                             </a>
                         </li>
 
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink">
                                 <img src="assets/icons/setting.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Settings
+                                <span>Settings</span>
                             </a>
                         </li>
                     </div>
@@ -81,13 +97,13 @@
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink">
                                 <img src="assets/icons/info-circle.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Help
+                                <span>Help</span>
                             </a>
                         </li>
                         <li class="sidebar__item ">
                             <a href="#" class="sidebar__navlink">
                                 <img src="assets/icons/login.svg" alt="Dashboard Icon" class="sidebar__icon">
-                                Logout
+                                <span>Logout</span>
                             </a>
                         </li>
                     </div>
@@ -106,21 +122,22 @@
 
         <!-- Main Content Area -->
         <main class="dashboard__main">
-            
+
+
             <div class="dashboard__searchbar">
                 <img src="assets/icons/search-normal.svg" alt="searchbar Icon" class="searchbar__icon">
                 <input type="text" placeholder="Search here..." class="dashboard__searchbar-input">
             </div>
-            
+
             <div class="actions">
-                <div class="actions__icon-wrapper">
-                    <img src="assets/icons/notification.svg" alt="Notification Icon" class="actions__icon">
+                <div class="actions__icon actions__icon--alerts">
+                    <img src="assets/icons/notification.svg" alt="Notification Icon">
                 </div>
-                <div class="actions__icon-wrapper">
-                    <img src="assets/icons/message-text.svg" alt="Message Icon" class="actions__icon">
+                <div class="actions__icon actions__icon--alerts">
+                    <img src="assets/icons/message-text.svg" alt="Message Icon">
                 </div>
-                <div class="actions__icon-wrapper actions__icon-active">
-                    <img src="assets/icons/gallery.svg" alt="Gallery Icon" class="actions__icon">
+                <div class="actions__icon actions__icon--active">
+                    <img src="assets/icons/gallery.svg" alt="Gallery Icon">
                 </div>
 
 
@@ -130,17 +147,17 @@
                 </div>
                 <div class="actions__icon-toggle">
 
-                    <img src="assets/icons/arrow-down.svg" alt="arrow-down" class="actions__icon">
+                    <img src="assets/icons/arrow-down.svg" alt="arrow-down">
 
                 </div>
             </div>
-           
+
             <div class="finance">
                 <h3>Overview</h3>
                 <div class="finance__report-wrapper">
 
 
-                    <div class="finance__report finance__report-balance">
+                    <div class="finance__report finance__report--balance">
                         <div class="finance__report-row">
                             <div class="finance__report-icon">
                                 <img src="assets/icons/balance.svg" alt="Balance Icon">
@@ -154,7 +171,7 @@
                             </div>
                         </div>
                         <div class="finance__report-divider"></div>
-                        <p class="finance__report-amount">
+                        <p class="finance__report-amount finance__report-amount--balance">
                             <span>$28,891.138 </span><img src="./assets/icons/arrow-right.svg" alt="arrow-right">
                         </p>
 
@@ -224,85 +241,219 @@
                 </div>
             </div>
 
-<!-- saving plan -->
-          
-<section class="saving">
-    <header class="saving__header">
-        <h3 class="saving__title">Saving Plan</h3>
-        <a href="#" class="saving__seeall">See All</a>
-    </header>
+            <!-- saving plan -->
 
-    <div class="saving__divider"></div>
+            <section class="saving">
+                <header class="saving__header">
+                    <h3 class="saving__title">Saving Plan</h3>
+                    <a href="#" class="saving__seeall">See All</a>
+                </header>
 
-    <div class="saving__list">
-        <!-- Bali Vacation -->
-        <article class="saving__item">
-            <div class="saving__goal">
-                <h4 class="saving__goal-title">Bali Vacation</h4>
-                <span class="saving__goal-target">Target: August 25, 2022</span>
-            </div>
-            <div class="saving__data">
-                <span class="saving__data-amount">$1950.21 <sub>/$4000</sub> </span>
-                <span class="saving__data-percentage saving__data-percentage--bali">48%</span>
-            </div>
-           
-                <progress class="saving__progressbar saving__progressbar--bali" value="48" max="100"></progress>
-            
-        </article>
+                <div class="saving__divider"></div>
 
-        <!-- New Gadget -->
-        <article class="saving__item">
-            <div class="saving__goal">
-                <h4 class="saving__goal-title">New Gadget</h4>
-                <span class="saving__goal-target">Target: December 15, 2022</span>
-            </div>
-            <div class="saving__data">
-                <span class="saving__data-amount">$1200.00 <sub>/$2500</sub></span>
-                <span class="saving__data-percentage saving__data-percentage--gadget">79%</span>
-            </div>
-           
-                <progress class="saving__progressbar saving__progressbar--gadget" value="79" max="100"></progress>
-            
-        </article>
+                <div class="saving__list">
+                    <!-- Bali Vacation -->
+                    <article class="saving__item">
+                        <div class="saving__goal">
+                            <h4 class="saving__goal-title">Bali Vacation</h4>
+                            <span class="saving__goal-target">Target: August 25, 2022</span>
+                        </div>
+                        <div class="saving__data">
+                            <span class="saving__data-amount">$1950,21 <sub>/$4000</sub> </span>
+                            <span class="saving__data-percentage saving__data-percentage--bali">48%</span>
+                        </div>
 
-        <!-- Charity -->
-        <article class="saving__item">
-            <div class="saving__goal">
-                <h4 class="saving__goal-title">Charity</h4>
-                <span class="saving__goal-target">Target: March 10, 2023</span>
-            </div>
-            <div class="saving__data">
-                <span class="saving__data-amount">$500.00 <sub>/$1000</sub></span>
-                <span class="saving__data-percentage saving__data-percentage--charity">32%</span>
-            </div>
-           
-                <progress class="saving__progressbar saving__progressbar--charity" value="32" max="100"></progress>
-            
-        </article>
-        
-    </div>
-</section>
+                        <progress class="saving__progressbar saving__progressbar--bali" value="48" max="100"></progress>
 
-           
-            <div class="dashboard__column dashboard__column--large">
+                    </article>
+
+                    <!-- New Gadget -->
+                    <article class="saving__item">
+                        <div class="saving__goal">
+                            <h4 class="saving__goal-title">New Gadget</h4>
+                            <span class="saving__goal-target">Target: December 15, 2022</span>
+                        </div>
+                        <div class="saving__data">
+                            <span class="saving__data-amount">$790,21 <sub>/$1000</sub></span>
+                            <span class="saving__data-percentage saving__data-percentage--gadget">79%</span>
+                        </div>
+
+                        <progress class="saving__progressbar saving__progressbar--gadget" value="79"
+                            max="100"></progress>
+
+                    </article>
+
+                    <!-- Charity -->
+                    <article class="saving__item">
+                        <div class="saving__goal">
+                            <h4 class="saving__goal-title">Charity</h4>
+                            <span class="saving__goal-target">Target: March 10, 2023</span>
+                        </div>
+                        <div class="saving__data">
+                            <span class="saving__data-amount">$32,111 <sub>/$100</sub></span>
+                            <span class="saving__data-percentage saving__data-percentage--charity">32%</span>
+                        </div>
+
+                        <progress class="saving__progressbar saving__progressbar--charity" value="32"
+                            max="100"></progress>
+
+                    </article>
+
+                </div>
+            </section>
+
+
+            <div class="charts">
                 <div class="dashboard__chart">chart js
 
-                    <canvas id="myChart">chart js</canvas>
+                    <div id="chart">chart js</div>
                 </div>
             </div>
 
             <!-- 3rd Column (Recent Transactions) -->
-            <div class="dashboard__column">
-                <ul class="dashboard__transactions">
-                    <li class="dashboard__transaction">Transaction 1</li>
-                    <li class="dashboard__transaction">Transaction 2</li>
-                    <li class="dashboard__transaction">Transaction 3</li>
-                    <li class="dashboard__transaction">Transaction 4</li>
-                </ul>
-            </div>
-            <!-- </section> -->
-        </main>
+            <section class="transaction">
+
+                <header class="transaction__header">
+                    <h3 class="transaction__title">Recent Transaction</h3>
+                    <a href="#" class="transaction__seeall">See All</a>
+                </header>
+                <div class="transaction__divider"></div>
+
+                <div class="transaction__list">
+                    <article class="transaction__item">
+
+                        <div class="transaction__content">
+                            <div class="transaction__icon">
+                                <img src="./assets/icons/gallery.svg">
+                            </div>
+                            <div class="transaction__details">
+                                <div class="transaction__category">Figma</div>
+                                <p class="transaction__date">August 20, 2022</p>
+
+                            </div>
+
+                        </div>
+                        <div class="transaction__summary">
+                            <div class="transaction__amount">$ 100</div>
+                            <p class="transaction__status">Completed</p>
+
+                        </div>
+                    </article>
+
+                    <article class="transaction__item">
+
+                        <div class="transaction__content">
+                            <div class="transaction__icon">
+                                <img src="./assets/icons/gallery.svg">
+                            </div>
+                            <div class="transaction__details">
+                                <div class="transaction__category">Youtube</div>
+                                <p class="transaction__date">August 20,2022</p>
+
+                            </div>
+
+                        </div>
+                        <div class="transaction__summary">
+                            <div class="transaction__amount">$ 120</div>
+                            <p class="transaction__status">Completed</p>
+
+                        </div>
+                    </article>
+                    <article class="transaction__item">
+
+                        <div class="transaction__content">
+                            <div class="transaction__icon">
+                                <img src="./assets/icons/gallery.svg">
+                            </div>
+                            <div class="transaction__details">
+                                <div class="transaction__category">Spotify</div>
+                                <p class="transaction__date">August 20,2022</p>
+
+                            </div>
+
+                        </div>
+                        <div class="transaction__summary">
+                            <div class="transaction__amount">$ 15</div>
+                            <p class="transaction__status">Completed</p>
+
+                        </div>
+                    </article>
+                    <article class="transaction__item">
+
+                        <div class="transaction__content">
+                            <div class="transaction__icon">
+                                <img src="./assets/icons/gallery.svg">
+                            </div>
+                            <div class="transaction__details">
+                                <div class="transaction__category">Freepik</div>
+                                <p class="transaction__date">August 20,2022</p>
+
+                            </div>
+
+                        </div>
+                        <div class="transaction__summary">
+                            <div class="transaction__amount">$ 300</div>
+                            <p class="transaction__status">Completed</p>
+
+                        </div>
+                    </article>
+
+
+                </div>
+
+            </section>
+
     </div>
+    <!-- </section> -->
+    </main>
+    </div>
+
+
+    <script>
+
+
+
+document.getElementById("sidebarToggle").addEventListener("click", function() {
+    const spans = document.querySelectorAll(".sidebar__item a span");
+    const sidebar = document.getElementById("sidebar");
+    const isHidden = spans[0].classList.contains("show-span");
+
+    spans.forEach(span => {
+        if (isHidden) {
+            span.classList.remove("show-span");
+            setTimeout(() => (span.style.display = "none"), 300); // Hide after transition
+        } else {
+            span.style.display = "inline-block";
+            setTimeout(() => span.classList.add("show-span"), 10); // Ensure transition runs
+        }
+    });
+
+    // Toggle button text between ">" and "<"
+    this.innerHTML = isHidden ? "&gt;" : "&lt;";
+});
+
+// const sidebar = document.getElementById("sidebar");
+// const toggleButton = document.getElementById("sidebarToggle");
+// const overlay = document.createElement("div"); // Create overlay element
+// overlay.classList.add("sidebar-overlay");
+// document.body.appendChild(overlay);
+
+// toggleButton.addEventListener("click", function () {
+//     sidebar.classList.toggle("open");
+//     overlay.classList.toggle("active");
+
+//     // Toggle button icon
+//     this.innerHTML = sidebar.classList.contains("open") ? "&lt;" : "&gt;";
+// });
+
+// // Hide sidebar when clicking outside
+// overlay.addEventListener("click", function () {
+//     sidebar.classList.remove("open");
+//     overlay.classList.remove("active");
+//     toggleButton.innerHTML = "&gt;";
+// });
+
+    </script>
 
 </body>
 
