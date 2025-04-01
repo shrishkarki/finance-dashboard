@@ -12,18 +12,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
 
     <script src="./assets/js/chart.js" defer></script>
+    <script src="./assets/js/index.js" defer></script>
 
 </head>
 
 <body>
     <div class="dashboard">
+  <!-- Backdrop -->
+  <div class="dashboard__backdrop" id="sidebarBackdrop"></div>
 
-        <!-- <button class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger">
             &#9776;
-        </button> -->
+        </button>
+        
 
         <!-- left sidebar -->
-        <aside class="dashboard__sidebar" id="sidebar">
+        <aside class="dashboard__sidebar">
             <nav class="sidebar">
                 <!-- Logo Placeholder -->
                 <div class="sidebar__logo-container">
@@ -36,6 +40,9 @@
                         &#9776;
                     </button> -->
                     <button class="sidebar__toggle" id="sidebarToggle">
+                        &gt;
+                    </button>
+                    <button id="hamburger__close">
                         &gt;
                     </button>
                  
@@ -326,7 +333,7 @@
     </div>
 </div>
 
-            <!-- 3rd Column (Recent Transactions) -->
+           
             <section class="transaction">
 
                 <header class="transaction__header">
@@ -420,7 +427,7 @@
             </section>
 
     </div>
-    <!-- </section> -->
+    
     </main>
     </div>
 
@@ -429,26 +436,22 @@
 
 
 
-document.getElementById("sidebarToggle").addEventListener("click", function() {
-    const spans = document.querySelectorAll(".sidebar__item a span");
-    const sidebar = document.getElementById("sidebar");
-    const isHidden = spans[0].classList.contains("show-span");
 
-    spans.forEach(span => {
-        if (isHidden) {
-            span.classList.remove("show-span");
-            setTimeout(() => (span.style.display = "none"), 300); 
-        } else {
-            span.style.display = "inline-block";
-            setTimeout(() => span.classList.add("show-span"), 10); 
-        }
-    });
 
-    
-    this.innerHTML = isHidden ? "&gt;" : "&lt;";
+// Get the elements
+const hamburger = document.getElementById('hamburger');
+const hamburgerClose=document.getElementById("hamburger__close");
+const sidebar = document.querySelector('.dashboard__sidebar');
+
+// Add event listener to the hamburger button
+hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('show'); // Toggle 'open' class on the sidebar
+    // sidebar.classList.toggle('hide')
 });
-
-
+hamburgerClose.addEventListener('click',()=>{
+    sidebar.classList.toggle('show');
+    sidebar.classList.toggle('hide')
+})
 
 
 

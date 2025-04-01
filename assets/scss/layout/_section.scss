@@ -1,37 +1,32 @@
+
 .dashboard__main {
     display: grid;
-    // grid-template-columns: auto auto;
-    grid-template-columns: minmax(500px, auto) minmax(350px, auto);
+    grid-template-columns: auto auto;
+    // grid-template-columns: minmax(500px, auto) minmax(350px, auto);
     // grid-template-rows: 64px auto auto;
     gap: 32px 32px;
     padding: 32px 32px 0 32px;
+    width: 80%; /* Ensure the grid container takes full width */
 
-    // @include media-query(1000px) {
-    //    grid-template-columns: 1fr 1fr;
+    @include media-query(1050px) {
+       grid-template-columns: 1fr;
+      
+    }
+
+    // @include media-query(1235px) {
+    //     padding: 21px 21px 0 21px;
+    //     gap: 20px 20px;
     // }
 
-    @include media-query(1235px) {
-        padding: 21px 21px 0 21px;
-        gap: 20px 20px;
-    }
+    // @include media-query(996px) {
+    //     grid-template-columns: 380px 380px;
+    // }
 
-    @include media-query(996px) {
-        grid-template-columns: 380px 380px;
-    }
+    // @include media-query(900px) {
+    //     grid-template-columns: minmax(290px, auto) minmax(340px, auto);
+    // }
 
-    @include media-query(900px) {
-        grid-template-columns: minmax(290px, auto) minmax(340px, auto);
-    }
-
-    @include media-query(760px) {
-        grid-template-columns: 100%;
-        justify-content: center;
-        align-items: center;
-
-
-
-    }
-
+  
 
 }
 
@@ -94,7 +89,7 @@
         column-gap: 5px;
     }
 
-    @include media-query(760px) {
+    @include media-query(1050px) {
         padding: 10px 0;
         order: -1;
         background-color: transparent;
@@ -221,8 +216,8 @@
             gap: 12px;
         }
 
-        @include media-query(996px) {
-            grid-template-columns: auto;
+        @include media-query(850px) {
+            grid-template-columns: 1fr;
 
         }
 
@@ -619,6 +614,10 @@
 .chart {
     @include box(#FFFFFF, 20px, 14px);
 
+    @include media-query(996px){
+        padding: 13px
+    }
+
     &__title {
         @include text-style($font-size-xl, $font-weight-extrabold, $text-color-dark);
         letter-spacing: -1px;
@@ -663,33 +662,9 @@
     }
  
 
+    // &__display{
+    //     width: 100%;
+    //     height: 4000px;
+    // }
 }
 
-#chart__display {
-    width: 100%;
-    height: 400px;
-   
-
-}
-
-// .apexcharts-gridline {
-//     stroke:#EBEBEB !important;
-   
-//     stroke-dasharray: 12 !important;
-    
-// }
-
-// .apexcharts-yaxis-label {
-//     fill: #999999 !important;
-   
-// }
-
-// .apexcharts-xaxis-label {
-//     fill: #999999 !important;
-   
-// }
-
-// .apexcharts-legend-text {
-//     fill: green !important;
-    
-// }
